@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 
 const cors = require('cors');
-app.use(cors());
+
 
 const authenticate = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
