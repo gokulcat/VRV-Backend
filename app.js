@@ -17,6 +17,9 @@ app.use(cors({
   allowedHeaders: 'Content-Type,Authorization',  // Allow these headers
 }));
 
+
+app.options('*', cors()); // Preflight request handler
+
 app.use(express.json());
 
 // MongoDB Connection
