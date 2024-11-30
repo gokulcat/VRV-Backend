@@ -13,13 +13,8 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
-
-
-
-
 app.options('*', cors()); // Preflight request handler
 
-app.use(express.json());
 
 // MongoDB Connection
 mongoose
