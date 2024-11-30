@@ -32,14 +32,15 @@ app.use("/api/auth", authRoutes);
 
 // Middleware to log requests
 app.use((req, res, next) => {
-  console.log(`Incoming Request: ${req.method} ${req.url}`); 
+  console.log(`Incoming Request: ${req.method} ${req.url}`);
+  // console.log("Headers:", req.headers);
   next();
 });
 
 
 app.use(
   cors({
-    origin: [ "http://localhost:3000", 'https://vrv-security-assignment-axf7.vercel.app/'], // Allow all origins (not recommended for production)
+    origin:  "http://localhost:3000", // Allow all origins (not recommended for production)
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // Enable cookies in requests and responses (needed for authentication)
